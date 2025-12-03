@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncrumpled - Frictionless Digital Organization</title>
+    <meta name="description" content="Instant notes, project workspaces, and state restoration — triggered by a single hotkey.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Uncrumpled - Frictionless Digital Organization">
+    <meta property="og:description" content="Instant notes, project workspaces, and state restoration — triggered by a single hotkey.">
+    <meta property="og:image" content="/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Uncrumpled - Frictionless Digital Organization">
+    <meta name="twitter:description" content="Instant notes, project workspaces, and state restoration — triggered by a single hotkey.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#272822">
+
+    <!-- Favicon (inline SVG data URI) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='4' y='4' width='14' height='14' rx='2' fill='%23f92672' opacity='0.9'/%3E%3Crect x='22' y='4' width='14' height='14' rx='2' fill='%23a6e22e' opacity='0.8'/%3E%3Crect x='4' y='22' width='14' height='14' rx='2' fill='%2366d9ef' opacity='0.8'/%3E%3Crect x='22' y='22' width='14' height='14' rx='2' fill='%23e6db74' opacity='0.7'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-animation" id="hero-animation">
+            <canvas id="origami-canvas"></canvas>
+            <div class="animation-fade"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Finally, a frictionless way to organize your digital life.</h1>
+                <p class="subtitle">Instant notes, project workspaces, and state restoration — triggered by a single hotkey.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" id="join-waitlist-hero">Join the waitlist</button>
+                    <button class="btn btn-secondary" id="share-feedback">Share your feedback</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem → Vision Section -->
+    <section class="problem-vision" id="problem-vision">
+        <div class="container">
+            <h2 class="section-title">The Problem</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                            <path d="M7 8h4M7 11h6" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3>Context switching kills flow</h3>
+                    <p>Switching between apps and projects breaks concentration and costs precious mental energy.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <path d="M9 13h6M9 17h3" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3>Notes are scattered</h3>
+                    <p>Important information lives in dozens of places, making it hard to find when you need it most.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <h3>Setup takes forever</h3>
+                    <p>Reconstructing project setups—terminals, tabs, windows—is slow and repetitive work.</p>
+                </div>
+            </div>
+
+            <div class="vision-divider">
+                <span class="divider-icon">↓</span>
+            </div>
+
+            <h2 class="section-title">The Vision</h2>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                            <polyline points="10,17 15,12 10,7"/>
+                            <line x1="15" y1="12" x2="3" y2="12"/>
+                        </svg>
+                    </div>
+                    <p>One hotkey brings up context-specific notes</p>
+                </div>
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                    </div>
+                    <p>Switching projects automatically changes workspaces</p>
+                </div>
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                    </div>
+                    <p>Apps, terminals, and sessions can be snapshotted and restored</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <h3>Smart Notes & Hotkeys</h3>
+                    <p>Open contextual notes for any app instantly. Firefox → Firefox notes, VS Code → VS Code notes. Your notes follow your context.</p>
+                    <div class="feature-visual">
+                        <div class="hotkey-demo">
+                            <span class="key">⌘</span>
+                            <span class="key">Shift</span>
+                            <span class="key">N</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <h3>Project Spaces</h3>
+                    <p>Switching to a project brings up its notebook and restores terminals, commands, and browser state. Everything in sync.</p>
+                    <div class="feature-visual">
+                        <div class="project-tabs">
+                            <span class="tab">Work</span>
+                            <span class="tab active">Side Project</span>
+                            <span class="tab">Research</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <h3>Session Snapshots</h3>
+                    <p>Bring back previous working states or start fresh — your choice. Never lose a setup again.</p>
+                    <div class="feature-visual">
+                        <div class="snapshot-list">
+                            <div class="snapshot-item">
+                                <span class="snapshot-dot"></span>
+                                <span>Today, 2:30 PM</span>
+                            </div>
+                            <div class="snapshot-item">
+                                <span class="snapshot-dot"></span>
+                                <span>Yesterday</span>
+                            </div>
+                            <div class="snapshot-item faded">
+                                <span class="snapshot-dot"></span>
+                                <span>3 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Signup Section -->
+    <section class="signup" id="signup">
+        <div class="container">
+            <div class="signup-content">
+                <h2>Help shape the next generation of digital organization.</h2>
+                <p>Be the first to know when we launch and get early access.</p>
+                <form class="signup-form" id="signup-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="your@email.com" required id="email-input">
+                        <button type="submit" class="btn btn-primary">Join the waitlist</button>
+                    </div>
+                    <p class="privacy-note">We'll only email with updates; no spam.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Section -->
+    <section class="survey" id="survey">
+        <div class="container">
+            <h2 class="section-title">Tell us what you want in a tool like this.</h2>
+            <p class="section-subtitle">Your feedback will help us build something you'll actually use.</p>
+
+            <form class="survey-form" id="survey-form">
+                <div class="survey-question">
+                    <label>Who are you?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="role" value="developer">
+                            <span class="radio-custom"></span>
+                            <span>Developer</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="role" value="student">
+                            <span class="radio-custom"></span>
+                            <span>Student</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="role" value="designer">
+                            <span class="radio-custom"></span>
+                            <span>Designer</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="role" value="other">
+                            <span class="radio-custom"></span>
+                            <span>Other</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="survey-question">
+                    <label>Do you currently use note-taking or organization tools?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="uses-tools" value="yes-many">
+                            <span class="radio-custom"></span>
+                            <span>Yes, several</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="uses-tools" value="yes-one">
+                            <span class="radio-custom"></span>
+                            <span>Yes, one or two</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="uses-tools" value="no">
+                            <span class="radio-custom"></span>
+                            <span>Not really</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="survey-question">
+                    <label>Which feature are you most interested in?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="feature" value="smart-notes">
+                            <span class="radio-custom"></span>
+                            <span>Smart Notes & Hotkeys</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="feature" value="project-spaces">
+                            <span class="radio-custom"></span>
+                            <span>Project Spaces</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="feature" value="session-snapshots">
+                            <span class="radio-custom"></span>
+                            <span>Session Snapshots</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="survey-question">
+                    <label>What platform do you use?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="platform" value="macos">
+                            <span class="radio-custom"></span>
+                            <span>macOS</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="platform" value="linux">
+                            <span class="radio-custom"></span>
+                            <span>Linux</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="platform" value="windows">
+                            <span class="radio-custom"></span>
+                            <span>Windows</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="survey-question">
+                    <label>Anything else you'd like to share? <span class="optional">(optional)</span></label>
+                    <textarea name="feedback" rows="3" placeholder="Your thoughts..."></textarea>
+                </div>
+
+                <div class="survey-question">
+                    <label>Email <span class="optional">(optional, for follow-up)</span></label>
+                    <input type="email" name="survey-email" placeholder="your@email.com">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Submit feedback</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Discussion Section -->
+    <section class="discussion" id="discussion">
+        <div class="container">
+            <h2 class="section-title">Join the Discussion</h2>
+            <p class="section-subtitle">Help us shape Uncrumpled. Share your ideas and connect with others.</p>
+
+            <div class="discussion-links">
+                <a href="#" class="discussion-card" target="_blank" rel="noopener">
+                    <div class="discussion-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span>Discuss on Hacker News</span>
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7"/>
+                        <polyline points="7,7 17,7 17,17"/>
+                    </svg>
+                </a>
+                <a href="#" class="discussion-card" target="_blank" rel="noopener">
+                    <div class="discussion-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M16 12c0 2-1.5 3-4 3s-4-1-4-3c0-1.5 1-2.5 2-3l1-2c.5-1 1.5-1 2 0l1 2c1 .5 2 1.5 2 3z" fill="#272822"/>
+                        </svg>
+                    </div>
+                    <span>Discuss on Reddit</span>
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7"/>
+                        <polyline points="7,7 17,7 17,17"/>
+                    </svg>
+                </a>
+                <a href="#" class="discussion-card" target="_blank" rel="noopener">
+                    <div class="discussion-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <span>Follow on GitHub</span>
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7"/>
+                        <polyline points="7,7 17,7 17,17"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 40 40" class="logo-icon">
+                        <rect x="4" y="4" width="14" height="14" rx="2" fill="currentColor" opacity="0.8"/>
+                        <rect x="22" y="4" width="14" height="14" rx="2" fill="currentColor" opacity="0.6"/>
+                        <rect x="4" y="22" width="14" height="14" rx="2" fill="currentColor" opacity="0.6"/>
+                        <rect x="22" y="22" width="14" height="14" rx="2" fill="currentColor" opacity="0.4"/>
+                    </svg>
+                    <span>Uncrumpled</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="mailto:hello@uncrumpled.app">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2025 Uncrumpled. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="animation.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
