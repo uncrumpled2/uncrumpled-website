@@ -88,8 +88,8 @@ function initSignupForm() {
             submitBtn.textContent = 'Joining...';
 
             try {
-                // Simulate API call (replace with actual endpoint)
-                await simulateApiCall({ email, type: 'waitlist' });
+                // Submit to Google Sheets
+                await submitToGoogleSheets({ email, type: 'waitlist', timestamp: new Date().toISOString() });
 
                 // Show success message
                 showFormSuccess(signupForm, 'You\'re on the list! We\'ll be in touch soon.');
@@ -133,11 +133,12 @@ function initPollForm() {
             submitBtn.textContent = 'Submitting...';
 
             try {
-                // Simulate API call (replace with actual endpoint)
-                await simulateApiCall({
-                    features,
-                    email: email || null,
-                    type: 'poll'
+                // Submit to Google Sheets
+                await submitToGoogleSheets({
+                    features: features.join(', '),
+                    email: email || '',
+                    type: 'survey',
+                    timestamp: new Date().toISOString()
                 });
 
                 // Show success message
@@ -251,22 +252,24 @@ function showFormSuccess(form, message) {
 }
 
 /**
- * Utility: Simulate API call
- * Replace this with actual API integration
+ * Google Sheets Configuration
  */
-function simulateApiCall(data) {
-    return new Promise((resolve, reject) => {
-        console.log('Form submission data:', data);
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwAXeYgKd_5VzcrPLPf91UU-WOih72RQ2MPrA6yJ23UcJ7b_qT45e1DxkdPeGtOS3lhNA/exec';
 
-        // Simulate network delay
-        setTimeout(() => {
-            // Simulate 95% success rate
-            if (Math.random() > 0.05) {
-                resolve({ success: true });
-            } else {
-                reject(new Error('Network error'));
-            }
-        }, 1000);
+/**
+ * Utility: Submit form data to Google Sheets
+ */
+function submitToGoogleSheets(data) {
+    return fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Required for Google Apps Script
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    }).then(() => {
+        // no-cors mode doesn't return response body, assume success if no network error
+        return { success: true };
     });
 }
 
