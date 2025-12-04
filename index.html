@@ -25,6 +25,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics - Only loads after consent -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        function loadGoogleAnalytics() {
+            if (document.getElementById('ga-script')) return;
+            var script = document.createElement('script');
+            script.id = 'ga-script';
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-H0KCKV3VVK';
+            document.head.appendChild(script);
+
+            gtag('js', new Date());
+            gtag('config', 'G-H0KCKV3VVK');
+        }
+
+        // Check if user already consented
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            loadGoogleAnalytics();
+        }
+    </script>
 </head>
 <body>
     <!-- Hero Section -->
@@ -665,6 +688,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <p>We use cookies to analyze site traffic and improve your experience. By clicking "Accept", you consent to our use of analytics cookies.</p>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="btn btn-primary btn-cookie">Accept</button>
+                <button id="cookie-decline" class="btn btn-secondary btn-cookie">Decline</button>
+            </div>
+        </div>
+    </div>
 
     <script src="animation.js"></script>
     <script src="main.js"></script>

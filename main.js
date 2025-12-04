@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPollForm();
     initCTAButtons();
     initScrollAnimations();
+    initCookieConsent();
 });
 
 /**
@@ -307,3 +308,37 @@ document.querySelectorAll('.poll-options').forEach(group => {
         });
     });
 });
+
+/**
+ * Cookie Consent Banner
+ * Shows banner for EU visitors who haven't made a choice yet
+ */
+function initCookieConsent() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+
+    if (!banner || !acceptBtn || !declineBtn) return;
+
+    // Check if user has already made a choice
+    const consent = localStorage.getItem('cookieConsent');
+    if (consent) return; // User already made a choice
+
+    // Show banner (simplified approach - show to all users without consent)
+    // For production, you might want to use a geolocation API to detect EU visitors
+    banner.style.display = 'flex';
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.style.display = 'none';
+        // Load Google Analytics
+        if (typeof loadGoogleAnalytics === 'function') {
+            loadGoogleAnalytics();
+        }
+    });
+
+    declineBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.style.display = 'none';
+    });
+}
