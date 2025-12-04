@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uncrumpled - Frictionless Digital Organization</title>
-    <meta name="description" content="Instant notes, project workspaces, and state restoration — triggered by a single hotkey.">
+    <title>Uncrumpled - Hotkey-Driven Notes & Workspace Automation</title>
+    <meta name="description" content="Switch projects with one key. Open the exact notes, terminals, tabs, and tools you need — instantly.">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Uncrumpled - Frictionless Digital Organization">
-    <meta property="og:description" content="Instant notes, project workspaces, and state restoration — triggered by a single hotkey.">
+    <meta property="og:title" content="Uncrumpled - Hotkey-Driven Notes & Workspace Automation">
+    <meta property="og:description" content="Switch projects with one key. Open the exact notes, terminals, tabs, and tools you need — instantly.">
     <meta property="og:image" content="/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Uncrumpled - Frictionless Digital Organization">
-    <meta name="twitter:description" content="Instant notes, project workspaces, and state restoration — triggered by a single hotkey.">
+    <meta name="twitter:title" content="Uncrumpled - Hotkey-Driven Notes & Workspace Automation">
+    <meta name="twitter:description" content="Switch projects with one key. Open the exact notes, terminals, tabs, and tools you need — instantly.">
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#272822">
 
-    <!-- Favicon (inline SVG data URI) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='4' y='4' width='14' height='14' rx='2' fill='%23f92672' opacity='0.9'/%3E%3Crect x='22' y='4' width='14' height='14' rx='2' fill='%23a6e22e' opacity='0.8'/%3E%3Crect x='4' y='22' width='14' height='14' rx='2' fill='%2366d9ef' opacity='0.8'/%3E%3Crect x='22' y='22' width='14' height='14' rx='2' fill='%23e6db74' opacity='0.7'/%3E%3C/svg%3E">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="uncrumpled.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,92 +35,87 @@
         </div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Finally, a frictionless way to organize your digital life.</h1>
-                <p class="subtitle">Instant notes, project workspaces, and state restoration — triggered by a single hotkey.</p>
+                <div class="hero-logo">
+                    <img src="uncrumpled.png" alt="Uncrumpled - Origami Bird Logo">
+                </div>
+                <h1>Instant Focus With Hotkey-Driven Notes & Workspace Automation</h1>
+                <p class="subtitle">Switch projects with one key. Open the exact notes, terminals, tabs, and tools you need — instantly.</p>
+                <p class="subtitle-secondary">Stop wasting time rebuilding your environment. Press a hotkey and get back into flow.</p>
                 <div class="cta-buttons">
                     <button class="btn btn-primary" id="join-waitlist-hero">Join the waitlist</button>
-                    <button class="btn btn-secondary" id="share-feedback">Share your feedback</button>
+                    <button class="btn btn-secondary" id="share-feedback">Help shape the product</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem → Vision Section -->
-    <section class="problem-vision" id="problem-vision">
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
         <div class="container">
             <h2 class="section-title">The Problem</h2>
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">
+            <div class="problem-intro">
+                <p class="lead-text">Context-switching kills productivity.</p>
+                <p>If you're like most developers, you switch between projects, apps, and workspaces dozens of times a day. Each switch usually means:</p>
+            </div>
+
+            <div class="problem-list">
+                <div class="problem-item">
+                    <span class="problem-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="2" y="3" width="20" height="14" rx="2"/>
-                            <path d="M8 21h8M12 17v4"/>
-                            <path d="M7 8h4M7 11h6" opacity="0.5"/>
+                            <rect x="4" y="4" width="16" height="16" rx="2"/>
+                            <path d="M9 9l6 6M15 9l-6 6"/>
                         </svg>
-                    </div>
-                    <h3>Context switching kills flow</h3>
-                    <p>Switching between apps and projects breaks concentration and costs precious mental energy.</p>
+                    </span>
+                    <span>Reopening terminals</span>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">
+                <div class="problem-item">
+                    <span class="problem-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14,2 14,8 20,8"/>
-                            <path d="M9 13h6M9 17h3" opacity="0.5"/>
+                            <polyline points="4,17 10,11 4,5"/>
+                            <line x1="12" y1="19" x2="20" y2="19"/>
                         </svg>
-                    </div>
-                    <h3>Notes are scattered</h3>
-                    <p>Important information lives in dozens of places, making it hard to find when you need it most.</p>
+                    </span>
+                    <span>Re-running commands</span>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-icon">
+                <div class="problem-item">
+                    <span class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                    </span>
+                    <span>Restoring browser tabs</span>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                    </span>
+                    <span>Searching for the right notes</span>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12,6 12,12 16,14"/>
+                            <path d="M12 6v6l4 2"/>
                         </svg>
-                    </div>
-                    <h3>Setup takes forever</h3>
-                    <p>Reconstructing project setups—terminals, tabs, windows—is slow and repetitive work.</p>
+                    </span>
+                    <span>Rebuilding your entire mental context</span>
                 </div>
             </div>
 
-            <div class="vision-divider">
-                <span class="divider-icon">↓</span>
-            </div>
+            <p class="problem-conclusion">It can take <strong>minutes</strong> to get back to where you were. And that time adds up.</p>
+        </div>
+    </section>
 
-            <h2 class="section-title">The Vision</h2>
-            <div class="vision-grid">
-                <div class="vision-card">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
-                            <polyline points="10,17 15,12 10,7"/>
-                            <line x1="15" y1="12" x2="3" y2="12"/>
-                        </svg>
-                    </div>
-                    <p>One hotkey brings up context-specific notes</p>
-                </div>
-                <div class="vision-card">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="7" height="7" rx="1"/>
-                            <rect x="14" y="3" width="7" height="7" rx="1"/>
-                            <rect x="3" y="14" width="7" height="7" rx="1"/>
-                            <rect x="14" y="14" width="7" height="7" rx="1"/>
-                        </svg>
-                    </div>
-                    <p>Switching projects automatically changes workspaces</p>
-                </div>
-                <div class="vision-card">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-                            <path d="M3 3v5h5"/>
-                        </svg>
-                    </div>
-                    <p>Apps, terminals, and sessions can be snapshotted and restored</p>
-                </div>
-            </div>
+    <!-- Solution Section -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <h2 class="section-title">The Solution</h2>
+            <p class="section-intro">Meet a new tool that brings your entire context back with a single hotkey.</p>
         </div>
     </section>
 
@@ -129,179 +124,478 @@
         <div class="container">
             <h2 class="section-title">Key Features</h2>
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-number">01</div>
-                    <h3>Smart Notes & Hotkeys</h3>
-                    <p>Open contextual notes for any app instantly. Firefox → Firefox notes, VS Code → VS Code notes. Your notes follow your context.</p>
+                <!-- Feature 1: Context-Aware Notes -->
+                <div class="feature-card feature-card-large">
+                    <div class="feature-header">
+                        <div class="feature-number">01</div>
+                        <h3>Context-Aware Notes</h3>
+                    </div>
+                    <p class="feature-lead">Press a key (e.g., <kbd>F1</kbd>), and see notes specific to whatever app you're using.</p>
+                    <div class="feature-examples">
+                        <div class="example-item">
+                            <span class="app-name">In Firefox</span>
+                            <span class="arrow">→</span>
+                            <span class="result">your Firefox notes</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="app-name">In VS Code</span>
+                            <span class="arrow">→</span>
+                            <span class="result">project notes</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="app-name">In Word</span>
+                            <span class="arrow">→</span>
+                            <span class="result">writing notes</span>
+                        </div>
+                    </div>
+                    <p class="feature-note">Fully customizable. Stay focused without hunting for info.</p>
                     <div class="feature-visual">
                         <div class="hotkey-demo">
-                            <span class="key">⌘</span>
-                            <span class="key">Shift</span>
-                            <span class="key">N</span>
+                            <span class="key">F1</span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-number">02</div>
-                    <h3>Project Spaces</h3>
-                    <p>Switching to a project brings up its notebook and restores terminals, commands, and browser state. Everything in sync.</p>
+
+                <!-- Feature 2: Project Workspaces -->
+                <div class="feature-card feature-card-large">
+                    <div class="feature-header">
+                        <div class="feature-number">02</div>
+                        <h3>Project Workspaces</h3>
+                    </div>
+                    <p class="feature-lead">Switch between "project modes" instantly.</p>
+                    <p>Each workspace can automatically open:</p>
+                    <ul class="feature-list">
+                        <li>Terminals + commands</li>
+                        <li>Browser tabs</li>
+                        <li>Apps</li>
+                        <li>Documents</li>
+                        <li>Notes</li>
+                        <li>Anything you normally set up manually</li>
+                    </ul>
+                    <p class="feature-note">Jump into "Game Dev Mode", "School Assignment Mode", "Backend Dev Mode", or "Writing Mode" with a single hotkey.</p>
                     <div class="feature-visual">
                         <div class="project-tabs">
-                            <span class="tab">Work</span>
-                            <span class="tab active">Side Project</span>
-                            <span class="tab">Research</span>
+                            <span class="tab">Game Dev</span>
+                            <span class="tab active">Backend</span>
+                            <span class="tab">Writing</span>
                         </div>
                     </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-number">03</div>
-                    <h3>Session Snapshots</h3>
-                    <p>Bring back previous working states or start fresh — your choice. Never lose a setup again.</p>
+
+                <!-- Feature 3: Floating Notes -->
+                <div class="feature-card feature-card-large">
+                    <div class="feature-header">
+                        <div class="feature-number">03</div>
+                        <h3>Floating, Transparent Notes</h3>
+                    </div>
+                    <p class="feature-lead">Your notes can appear as a semi-transparent overlay on top of your existing UI.</p>
+                    <ul class="feature-list feature-list-compact">
+                        <li>Read while typing</li>
+                        <li>Reference documentation</li>
+                        <li>Compare information</li>
+                        <li>Stay in flow</li>
+                    </ul>
+                    <p class="feature-note">Adjust opacity with hotkeys.</p>
                     <div class="feature-visual">
-                        <div class="snapshot-list">
-                            <div class="snapshot-item">
-                                <span class="snapshot-dot"></span>
-                                <span>Today, 2:30 PM</span>
-                            </div>
-                            <div class="snapshot-item">
-                                <span class="snapshot-dot"></span>
-                                <span>Yesterday</span>
-                            </div>
-                            <div class="snapshot-item faded">
-                                <span class="snapshot-dot"></span>
-                                <span>3 days ago</span>
+                        <div class="floating-demo">
+                            <div class="floating-window">
+                                <div class="floating-bar"></div>
+                                <div class="floating-content">
+                                    <div class="floating-line"></div>
+                                    <div class="floating-line short"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Feature 4: Developer-Friendly -->
+                <div class="feature-card feature-card-large">
+                    <div class="feature-header">
+                        <div class="feature-number">04</div>
+                        <h3>Developer-Friendly</h3>
+                    </div>
+                    <p class="feature-lead">Use the built-in editor or plug in tools you already love:</p>
+                    <div class="editor-options">
+                        <span class="editor-tag">NeoVim</span>
+                        <span class="editor-tag">VS Code</span>
+                        <span class="editor-tag">VSCodium</span>
+                        <span class="editor-tag">+ more</span>
+                    </div>
+                    <p class="feature-note">Your workflow, your tools.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Email Signup Section -->
+    <!-- Who It's For Section -->
+    <section class="audience" id="audience">
+        <div class="container">
+            <h2 class="section-title">Who It's For</h2>
+            <p class="section-intro">This tool is designed for:</p>
+            <div class="audience-grid">
+                <div class="audience-item">
+                    <span class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="16,18 22,18 22,12 18,8 14,12 14,18"/>
+                            <polyline points="2,18 8,18 8,12 12,8"/>
+                            <line x1="2" y1="18" x2="2" y2="12"/>
+                        </svg>
+                    </span>
+                    <span>Developers</span>
+                </div>
+                <div class="audience-item">
+                    <span class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </span>
+                    <span>Engineers</span>
+                </div>
+                <div class="audience-item">
+                    <span class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                            <path d="M11 8v6M8 11h6"/>
+                        </svg>
+                    </span>
+                    <span>Researchers</span>
+                </div>
+                <div class="audience-item">
+                    <span class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                            <path d="M2 2l7.586 7.586"/>
+                            <circle cx="11" cy="11" r="2"/>
+                        </svg>
+                    </span>
+                    <span>Writers</span>
+                </div>
+                <div class="audience-item">
+                    <span class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </span>
+                    <span>Students</span>
+                </div>
+                <div class="audience-item">
+                    <span class="audience-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </span>
+                    <span>Anyone who juggles contexts</span>
+                </div>
+            </div>
+            <p class="audience-conclusion">If you juggle different contexts and want to reduce friction, this is for you.</p>
+        </div>
+    </section>
+
+    <!-- Why It Matters Section -->
+    <section class="why" id="why">
+        <div class="container">
+            <h2 class="section-title">Why It Matters</h2>
+            <p class="why-lead">Because the fastest way to be productive is to <strong>stay in flow</strong>.</p>
+            <p class="why-intro">This tool eliminates the repetitive overhead that steals your attention:</p>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <span class="why-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <span>No more "Where did I put that note?"</span>
+                </div>
+                <div class="why-item">
+                    <span class="why-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <span>No more reopening everything manually</span>
+                </div>
+                <div class="why-item">
+                    <span class="why-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <span>No more losing context when switching projects</span>
+                </div>
+                <div class="why-item">
+                    <span class="why-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <span>No more breaking your mental state</span>
+                </div>
+            </div>
+
+            <p class="why-conclusion">Press a key → <strong>You're back.</strong></p>
+        </div>
+    </section>
+
+    <!-- Early Access Section -->
     <section class="signup" id="signup">
         <div class="container">
             <div class="signup-content">
-                <h2>Help shape the next generation of digital organization.</h2>
-                <p>Be the first to know when we launch and get early access.</p>
+                <h2>Early Access</h2>
+                <p class="signup-lead">We're building the first version and looking for early users who want to shape the direction.</p>
+                <p>Get early access + help influence the roadmap.</p>
                 <form class="signup-form" id="signup-form">
                     <div class="input-group">
                         <input type="email" placeholder="your@email.com" required id="email-input">
-                        <button type="submit" class="btn btn-primary">Join the waitlist</button>
+                        <button type="submit" class="btn btn-primary">Join Waitlist</button>
                     </div>
-                    <p class="privacy-note">We'll only email with updates; no spam.</p>
+                    <p class="privacy-note">No spam. Just product updates & invitations.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Survey Section -->
-    <section class="survey" id="survey">
+    <!-- Poll Section -->
+    <section class="poll" id="poll">
         <div class="container">
-            <h2 class="section-title">Tell us what you want in a tool like this.</h2>
-            <p class="section-subtitle">Your feedback will help us build something you'll actually use.</p>
+            <h2 class="section-title">Which features matter most to you?</h2>
+            <p class="section-subtitle">Select all that apply. Your input shapes what we build first.</p>
 
-            <form class="survey-form" id="survey-form">
-                <div class="survey-question">
-                    <label>Who are you?</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="role" value="developer">
-                            <span class="radio-custom"></span>
-                            <span>Developer</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="role" value="student">
-                            <span class="radio-custom"></span>
-                            <span>Student</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="role" value="designer">
-                            <span class="radio-custom"></span>
-                            <span>Designer</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="role" value="other">
-                            <span class="radio-custom"></span>
-                            <span>Other</span>
-                        </label>
+            <form class="poll-form" id="poll-form">
+                <div class="poll-categories">
+                    <!-- Workspace & Context -->
+                    <div class="poll-category">
+                        <h3 class="category-title">Workspace & Context</h3>
+                        <div class="poll-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="context-adapt">
+                                <span class="checkbox-custom"></span>
+                                <span>Automatically adapt actions based on current project, file, or application</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="session-restore">
+                                <span class="checkbox-custom"></span>
+                                <span>Save and restore sessions including open apps, editors, and terminals</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="project-switch">
+                                <span class="checkbox-custom"></span>
+                                <span>Switch between projects seamlessly</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="workspace-memory">
+                                <span class="checkbox-custom"></span>
+                                <span>Remember your last workspace state when reopening apps</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Hotkeys & Automation -->
+                    <div class="poll-category">
+                        <h3 class="category-title">Hotkeys & Automation</h3>
+                        <div class="poll-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="global-hotkeys">
+                                <span class="checkbox-custom"></span>
+                                <span>Trigger workflows with global hotkeys</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="conditional-hotkeys">
+                                <span class="checkbox-custom"></span>
+                                <span>Conditional hotkeys that work only in certain apps or situations</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="multi-step-automation">
+                                <span class="checkbox-custom"></span>
+                                <span>Multi-step automation with a single keypress (e.g., open terminal → navigate → start editor)</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="hotkey-visualize">
+                                <span class="checkbox-custom"></span>
+                                <span>Visualize hotkey bindings and workflow triggers</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Editor & Terminal Integration -->
+                    <div class="poll-category">
+                        <h3 class="category-title">Editor & Terminal Integration</h3>
+                        <div class="poll-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="editor-launch">
+                                <span class="checkbox-custom"></span>
+                                <span>Launch and control editors from anywhere</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="terminal-commands">
+                                <span class="checkbox-custom"></span>
+                                <span>Send commands to terminal sessions automatically</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="background-sessions">
+                                <span class="checkbox-custom"></span>
+                                <span>Keep editor or terminal sessions running in the background for reuse</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="ssh-remote">
+                                <span class="checkbox-custom"></span>
+                                <span>Connect to remote editors or servers via SSH</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Workflows -->
+                    <div class="poll-category">
+                        <h3 class="category-title">Workflows</h3>
+                        <div class="poll-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="workflow-sequences">
+                                <span class="checkbox-custom"></span>
+                                <span>Define sequences of actions to automate common tasks</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="multi-app-workflows">
+                                <span class="checkbox-custom"></span>
+                                <span>Run workflows across multiple applications simultaneously</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="dry-run">
+                                <span class="checkbox-custom"></span>
+                                <span>Dry-run workflows to see what will happen before executing</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="workflow-visualize">
+                                <span class="checkbox-custom"></span>
+                                <span>Visualize workflow progress and outputs</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Plugins & Extensions -->
+                    <div class="poll-category">
+                        <h3 class="category-title">Plugins & Extensions</h3>
+                        <div class="poll-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="community-plugins">
+                                <span class="checkbox-custom"></span>
+                                <span>Install community plugins to extend capabilities</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="plugin-browser">
+                                <span class="checkbox-custom"></span>
+                                <span>Browse available plugins and see what features they provide</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="hot-reload">
+                                <span class="checkbox-custom"></span>
+                                <span>Hot-reload plugins without restarting the application</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="custom-plugins">
+                                <span class="checkbox-custom"></span>
+                                <span>Create custom plugins for personal workflows</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Debugging & Insight -->
+                    <div class="poll-category">
+                        <h3 class="category-title">Debugging & Insight</h3>
+                        <div class="poll-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="step-execution">
+                                <span class="checkbox-custom"></span>
+                                <span>View step-by-step execution of workflows</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="inspect-outputs">
+                                <span class="checkbox-custom"></span>
+                                <span>Inspect workflow outputs, logs, and errors</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="detect-issues">
+                                <span class="checkbox-custom"></span>
+                                <span>Detect missing steps or misconfigured workflows before running</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="repl-explore">
+                                <span class="checkbox-custom"></span>
+                                <span>Explore workflows interactively via a REPL or visual interface</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Customization & Flexibility -->
+                    <div class="poll-category">
+                        <h3 class="category-title">Customization & Flexibility</h3>
+                        <div class="poll-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="project-workflows">
+                                <span class="checkbox-custom"></span>
+                                <span>Define custom workflows for specific projects</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="per-project-hotkeys">
+                                <span class="checkbox-custom"></span>
+                                <span>Bind hotkeys and workflows differently per project</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="combined-actions">
+                                <span class="checkbox-custom"></span>
+                                <span>Combine editor, terminal, and application actions in one workflow</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="templates">
+                                <span class="checkbox-custom"></span>
+                                <span>Use templates to get started quickly with common tasks</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Features -->
+                    <div class="poll-category">
+                        <h3 class="category-title">Advanced Features</h3>
+                        <div class="poll-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="export-diagrams">
+                                <span class="checkbox-custom"></span>
+                                <span>Export workflow diagrams for documentation or sharing</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="history-revert">
+                                <span class="checkbox-custom"></span>
+                                <span>Track history of workflows and revert to previous states</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="multi-profile">
+                                <span class="checkbox-custom"></span>
+                                <span>Multi-user or multi-profile support</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="features" value="overlay-feedback">
+                                <span class="checkbox-custom"></span>
+                                <span>Optional overlay for quick context or workflow feedback</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
-                <div class="survey-question">
-                    <label>Do you currently use note-taking or organization tools?</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="uses-tools" value="yes-many">
-                            <span class="radio-custom"></span>
-                            <span>Yes, several</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="uses-tools" value="yes-one">
-                            <span class="radio-custom"></span>
-                            <span>Yes, one or two</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="uses-tools" value="no">
-                            <span class="radio-custom"></span>
-                            <span>Not really</span>
-                        </label>
+                <div class="poll-footer">
+                    <div class="poll-email">
+                        <label>Email <span class="optional">(optional, to receive updates)</span></label>
+                        <input type="email" name="poll-email" placeholder="your@email.com">
                     </div>
-                </div>
 
-                <div class="survey-question">
-                    <label>Which feature are you most interested in?</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="feature" value="smart-notes">
-                            <span class="radio-custom"></span>
-                            <span>Smart Notes & Hotkeys</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="feature" value="project-spaces">
-                            <span class="radio-custom"></span>
-                            <span>Project Spaces</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="feature" value="session-snapshots">
-                            <span class="radio-custom"></span>
-                            <span>Session Snapshots</span>
-                        </label>
-                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Submit Feedback</button>
                 </div>
-
-                <div class="survey-question">
-                    <label>What platform do you use?</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="platform" value="macos">
-                            <span class="radio-custom"></span>
-                            <span>macOS</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="platform" value="linux">
-                            <span class="radio-custom"></span>
-                            <span>Linux</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="platform" value="windows">
-                            <span class="radio-custom"></span>
-                            <span>Windows</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="survey-question">
-                    <label>Anything else you'd like to share? <span class="optional">(optional)</span></label>
-                    <textarea name="feedback" rows="3" placeholder="Your thoughts..."></textarea>
-                </div>
-
-                <div class="survey-question">
-                    <label>Email <span class="optional">(optional, for follow-up)</span></label>
-                    <input type="email" name="survey-email" placeholder="your@email.com">
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-large">Submit feedback</button>
             </form>
         </div>
     </section>
@@ -359,14 +653,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <svg viewBox="0 0 40 40" class="logo-icon">
-                        <rect x="4" y="4" width="14" height="14" rx="2" fill="currentColor" opacity="0.8"/>
-                        <rect x="22" y="4" width="14" height="14" rx="2" fill="currentColor" opacity="0.6"/>
-                        <rect x="4" y="22" width="14" height="14" rx="2" fill="currentColor" opacity="0.6"/>
-                        <rect x="22" y="22" width="14" height="14" rx="2" fill="currentColor" opacity="0.4"/>
-                    </svg>
-                    <span>Uncrumpled</span>
+                    <img src="uncrumpled.png" alt="Uncrumpled" class="footer-logo-img">
                 </div>
+                <p class="footer-tagline">Built for people who want their computer to work the way they do.</p>
+                <p class="footer-credit">Made with care by someone who hates context switching.</p>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
                     <a href="mailto:hello@uncrumpled.app">Contact</a>

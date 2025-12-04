@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
     initSmoothScrolling();
     initSignupForm();
-    initSurveyForm();
+    initPollForm();
     initCTAButtons();
     initScrollAnimations();
 });
@@ -55,9 +55,9 @@ function initCTAButtons() {
 
     if (shareFeedbackBtn) {
         shareFeedbackBtn.addEventListener('click', () => {
-            const surveySection = document.getElementById('survey');
-            if (surveySection) {
-                surveySection.scrollIntoView({ behavior: 'smooth' });
+            const pollSection = document.getElementById('poll');
+            if (pollSection) {
+                pollSection.scrollIntoView({ behavior: 'smooth' });
             }
         });
     }
@@ -105,22 +105,25 @@ function initSignupForm() {
 }
 
 /**
- * Survey form handler
+ * Poll form handler (feature priority)
  */
-function initSurveyForm() {
-    const surveyForm = document.getElementById('survey-form');
+function initPollForm() {
+    const pollForm = document.getElementById('poll-form');
 
-    if (surveyForm) {
-        surveyForm.addEventListener('submit', async (e) => {
+    if (pollForm) {
+        pollForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const submitBtn = surveyForm.querySelector('button[type="submit"]');
-            const formData = new FormData(surveyForm);
-            const data = Object.fromEntries(formData.entries());
+            const submitBtn = pollForm.querySelector('button[type="submit"]');
+            const formData = new FormData(pollForm);
 
-            // Validate at least one required field is filled
-            if (!data.role && !data['uses-tools'] && !data.feature && !data.platform) {
-                alert('Please answer at least one question before submitting.');
+            // Get all checked features
+            const features = formData.getAll('features');
+            const email = formData.get('poll-email');
+
+            // Validate at least one feature is selected
+            if (features.length === 0) {
+                alert('Please select at least one feature before submitting.');
                 return;
             }
 
@@ -131,10 +134,14 @@ function initSurveyForm() {
 
             try {
                 // Simulate API call (replace with actual endpoint)
-                await simulateApiCall({ ...data, type: 'survey' });
+                await simulateApiCall({
+                    features,
+                    email: email || null,
+                    type: 'poll'
+                });
 
                 // Show success message
-                showFormSuccess(surveyForm, 'Thank you for your feedback! It means a lot to us.');
+                showFormSuccess(pollForm, 'Thanks for your input! Your feedback helps us prioritize.');
             } catch (error) {
                 alert('Something went wrong. Please try again.');
             } finally {
@@ -165,13 +172,13 @@ function initScrollAnimations() {
 
     // Observe all animatable elements
     const animatableElements = document.querySelectorAll(
-        '.problem-card, .vision-card, .feature-card, .discussion-card'
+        '.problem-item, .feature-card, .audience-item, .why-item, .preview-card, .discussion-card'
     );
 
-    animatableElements.forEach(el => {
+    animatableElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        el.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
         observer.observe(el);
     });
 
@@ -264,21 +271,27 @@ function simulateApiCall(data) {
 }
 
 /**
- * Optional: Add keyboard navigation for radio groups
+ * Keyboard navigation for checkbox groups
  */
-document.querySelectorAll('.radio-group').forEach(group => {
-    const options = group.querySelectorAll('.radio-option');
+document.querySelectorAll('.poll-options').forEach(group => {
+    const options = group.querySelectorAll('.checkbox-option');
 
     options.forEach((option, index) => {
-        option.addEventListener('keydown', (e) => {
-            let nextIndex;
+        option.setAttribute('tabindex', '0');
 
+        option.addEventListener('keydown', (e) => {
+            if (e.key === ' ' || e.key === 'Enter') {
+                e.preventDefault();
+                const input = option.querySelector('input');
+                input.checked = !input.checked;
+                input.dispatchEvent(new Event('change'));
+            }
+
+            let nextIndex;
             switch (e.key) {
-                case 'ArrowRight':
                 case 'ArrowDown':
                     nextIndex = (index + 1) % options.length;
                     break;
-                case 'ArrowLeft':
                 case 'ArrowUp':
                     nextIndex = (index - 1 + options.length) % options.length;
                     break;
@@ -287,8 +300,6 @@ document.querySelectorAll('.radio-group').forEach(group => {
             }
 
             e.preventDefault();
-            const nextInput = options[nextIndex].querySelector('input');
-            nextInput.checked = true;
             options[nextIndex].focus();
         });
     });
